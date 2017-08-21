@@ -24,14 +24,15 @@ class WeeksController extends Controller
         $week_data = $request->only('school', 'work', 'training', 'start_date', 'end_date');
         $week->fill($week_data);
         $week->save();
+        return redirect('/weeks');
     }
     
-    public function showForm()
+    public function showForm(Request $request)
     {
         return view(
              'weeks.form', [
                   'week' => Week::firstOrNew([
-                        'id' => $request->input('id')
+                      'id' => $request->input('id')
                    ])
              ]
         );
