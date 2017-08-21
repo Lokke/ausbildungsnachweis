@@ -1,6 +1,7 @@
 <?php
 
 use App\Task;
+use App\Week;
 
 Route::get('/tasks', function () {
 	//Eloquent query
@@ -15,8 +16,6 @@ Route::get('/tasks/{task}', function ($id) {
     return view('tasks.show', compact('task'));
 });
 
-Route::get('/enter', function () {
-    return view('enter');
-});
-
+Route::get('/weeks', 'WeeksController@index');
+Route::get('/weeks/{week}', 'WeeksController@show');
 
