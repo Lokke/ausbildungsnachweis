@@ -69,6 +69,7 @@
                 </li>
            @endforeach
        </ul>
+       <a class="flex-center" href="/weeks/add">Woche Hinzufügen</a>
             
     </body>
 </html>

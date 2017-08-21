@@ -61,8 +61,9 @@
         </style>
     </head>
     <body>
+<!--
         <p>Week {{ $week->id }}</p>        
-        <p>{{ $week->start_date }} - {{ $week->end_date }}</p>        
+        <p>{{ $week->start_date }} - {{ $week->end_date }}</p>        -->
         <h3>{{ $week->school }}</h3>        
         <h3>{{ $week->work }}</h3>        
         <h3>{{ $week->otj_training }}</h3>        
