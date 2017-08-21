@@ -16,9 +16,9 @@ class CreateWeeksTable extends Migration
         Schema::create('weeks', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->text('school');
-            $table->text('work');
-            $table->text('otj_training');
+            $table->text('school')->nullable();
+            $table->text('work')->nullable();
+            $table->text('training')->nullable();
             $table->date('start_date');
             $table->date('end_date');
         });
