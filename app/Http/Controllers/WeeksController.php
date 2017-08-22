@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Week;
+use App\Metadata;
 
 class WeeksController extends Controller
 {
@@ -14,7 +15,7 @@ class WeeksController extends Controller
 
     public function show($id)
     {
-        return view('weeks.show', ['week' => Week::find($id)]);
+        return view('weeks.show', ['week' => Week::find($id), 'metadata' => Metadata::first()]);
     }
 
     public function postForm(Request $request)
