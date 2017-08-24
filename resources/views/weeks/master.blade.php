@@ -7,6 +7,7 @@
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
          <link rel="stylesheet" href="https://rawgit.com/lodev09/bootstrap-markdown/master/css/bootstrap-markdown.min.css">
          <link rel="stylesheet" href="{{ asset('css/frontend.css') }}" type="text/css">
+         @yield('cssforpdf')
     </head>
     <body>
             
@@ -28,7 +29,7 @@
             </div><!--/.nav-collapse -->
           </div>
         </nav>
-        <div class=container>
+        <div class="container">
             @yield('content')
         </div>
     </body>
