@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Week;
-use App\Metadata;
+use \PDF;
+use App;
 
 class WeeksController extends Controller
 {
@@ -15,14 +16,14 @@ class WeeksController extends Controller
 
     public function show($id)
     {
-        return view('weeks.show', ['week' => Week::find($id), 'metadata' => Metadata::first()]);
+        return view('weeks.show', ['week' => Week::find($id)]); 
     }
 
     public function postForm(Request $request)
     {
         $week_id = $request->input('id');
         $week = Week::firstOrNew(['id' => $week_id]); 
-        $week_data = $request->only('school', 'work', 'training', 'start_date', 'end_date');
+        $week_data = $request->only('week_nr', 'name', 'profession', 'department', 'school', 'work', 'training', 'start_date', 'end_date');
         $week->fill($week_data);
         $week->save();
         return redirect('/weeks');
@@ -38,4 +39,11 @@ class WeeksController extends Controller
              ]
         );
     }       
+
+    public function export($id)
+    {
+        
+        $pdf = PDF::loadView('weeks.show', ['week' => Week::find($id)]); 
+        return $pdf->download('ausbildungsnachweis.pdf');
+    }
 }
