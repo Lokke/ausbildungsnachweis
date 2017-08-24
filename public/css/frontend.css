@@ -1,15 +1,56 @@
-html, body {
+html {
         background-color: #fff;
-        color: #4E2D3E;
         font-family: 'Raleway', sans-serif;
-        font-weight: 100;
+        font-weight: 300;
         height: 100vh;
         margin: 0;
 }
 
+body {
+        background-color: #fff;
+        font-family: 'Raleway', sans-serif;
+        height: 100vh;
+        margin: 0;
+        padding-top: 65px;
+}
+
+a.btn.btn-primary {
+        background-color: #5a5a5a; 
+        color: #fff;
+        font-weight: 300;
+        margin-top: 20px;
+}
+
+p {
+        font-family: 'Times-Roman';
+}
+
+td {
+        font-family: 'Times-Roman';
+}
+
+.underlined {
+        text-decoration: underline;
+}
+
+input {
+        color: #4E2D3E;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: .1rem;
+
+}
+
 .weeklist {
-        margin-top: 100px;
-    color: #4E2D3E;
+        color: #4E2D3E;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        height: 5vh;
+        margin: 0;
+}
+
+.weekindex {
+        padding-top: 70px;
 }
 
 .full-height {
@@ -32,10 +73,6 @@ html, body {
         top: 18px;
 }
 
-.content {
-        text-align: center;
-}
-
 .title {
         font-size: 84px;
 }
@@ -55,9 +92,18 @@ html, body {
 }
 
 .textarea {
-        margin-bottom: 15px;
 }
 
-.label {
-        margin-top: 15px;
+label {
+        margin: 15px 5px 15px 0;
+        display: inline-block;
+        max-width: 100%;
+        color: #4E2D3E;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: .1rem;
+}
+
+#start_date {
+        margin-right: 25px;
 }
