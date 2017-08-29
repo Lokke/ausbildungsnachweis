@@ -31,19 +31,19 @@
                     {{ Form::label('work', 'Ausbildung am Arbeitsplatz') }}
                 </div>
                 <div class="row">
-                    {{ Form::textarea('work') }}
+                    {{ Form::textarea('work', null, array('class'=>'summernote')) }}
                 </div>
                 <div class="row">
                     {{ Form::label('training', 'Berufliche Schulung/Unterweisung') }}
                 </div>
                 <div class="row">
-                    {{ Form::textarea('training') }}
+                    {{ Form::textarea('training', null, array('class'=>'summernote')) }}
                 </div>
                 <div class="row">
                     {{ Form::label('school', 'Berufschule') }}
                 </div>
                 <div class="row">
-                    {{ Form::textarea('school') }}
+                    {{ Form::textarea('school', null, array('class'=>'summernote')) }}
                 </div>
                 <div class="row">
                     {{ Form::submit('Speichern') }}

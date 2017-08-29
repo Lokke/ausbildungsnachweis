@@ -10,41 +10,23 @@
         <p>Ausbildungsberuf:                   <span class="underlined">{{ $week->profession }}</span></p>
         <p>Ausbildende Abteilung: <span class="underlined">{{ $week->department }}</span></p>
 
+            <h4>Tätigkeit und Stoff der Unterweisung</h4>
+            <p>Ausbildung am Arbeitsplatz</p>
         <table class="table table-bordered">
             <tbody>
-                <tr><td>Tätigkeit und Stoff der Unterweisung</td></tr>
-                <tr><td>Ausbildung am Arbeitsplatz</td></tr>
-                <tr><td></td></tr> 
-                <tr><td>{{ $week->otj_training }}</td></tr> 
-                <tr></tr> 
+                <tr><td>{!! $week->training !!}</td></tr> 
             </tbody>
         </table>
+            <p>Betriebliche Schulung/Unterweisung</p>
         <table class="table table-bordered">
             <tbody>
-                <tr><td>Betriebliche Schulung/Unterweisung</td></tr> 
-                <tr><td>{{ $week->work }}</td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
+                <tr><td>{!! $week->work !!}</td></tr> 
             </tbody>
         </table>
+            <p>Berufschule</p>
         <table class="table table-bordered">
             <tbody>
-                <tr><td>Berufschule</td></tr> 
-                <tr><td>{{ $week->school }}</td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
-                <tr><td></td></tr> 
+                <tr><td>{!! $week->school !!}</td></tr> 
             </tbody>
         </table>
         
