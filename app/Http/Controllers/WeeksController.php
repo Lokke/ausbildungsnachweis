@@ -39,11 +39,15 @@ class WeeksController extends Controller
              ]
         );
     }       
+    
+    public function exportTemplate($id)
+    {
+        return view('weeks.export', ['week' => Week::find($id)]); 
+    }
 
     public function export($id)
     {
-        
-        $pdf = PDF::loadView('weeks.show', ['week' => Week::find($id)]); 
+        $pdf = PDF::loadView('weeks.export', ['week' => Week::find($id)]); 
         return $pdf->download('ausbildungsnachweis.pdf');
     }
 }
