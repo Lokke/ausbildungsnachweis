@@ -6,6 +6,7 @@
        <style> 
               body {
                         font-family: 'Times-Roman';
+                        font-size: 12px;
                         height: 100vh;
                         margin: 0;
               }
@@ -15,7 +16,6 @@
               }
 
               table {
-                        border: solid 0.5px; 
               }
             
               td {
@@ -27,6 +27,7 @@
                         margin-bottom; 30px;
                         width: 700px;
                         height: 200px;
+                        border: solid 0.5px; 
               }
 
               p {
@@ -45,21 +46,34 @@
         <div class="container">
             <p>Ausbildungsnachweis für Ausbildungswoche Nr. <span class="underlined">{{ $week->week_nr }}</span></p>        
             <p class="datesdisplay"> von <span class="underlined"> {{ $week->start_date }}</span>   bis <span class="underlined">{{ $week->end_date }}</span></p>      
-            <p>Name: <span class="underlined">{{ $week->name }}</span></p>
-            <p>Ausbildungsberuf:                   <span class="underlined">{{ $week->profession }}</span></p>
-            <p>Ausbildende Abteilung: <span class="underlined">{{ $week->department }}</span></p>
 
+            <table class="metadata-table">
+                <tbody>
+                    <tr class="metadata-row">
+                        <td class="metadata">Name: </td>
+                        <td><span class="underlined">{{ $week->name }}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metadata">Ausbildungsberuf: </td>
+                        <td><span class="underlined">{{ $week->profession }}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metadata">Ausbildende Abteilung: </td>
+                        <td><span class="underlined">{{ $week->department }}</span></td>
+                    </tr>
+                </tbody>
+            </table>
             <h5>Tätigkeit und Stoff der Unterweisung</h5>
             <p>Ausbildung am Arbeitsplatz</p>
             <table class="table table-element">
                 <tbody>
-                    <td>{!! $week->training !!}</td> 
+                    <tr><td>{!! $week->work !!}</td></tr> 
                 </tbody>
             </table>
             <p>Betriebliche Schulung/Unterweisung</p>
             <table class="table table-element">
                 <tbody>
-                    <tr><td>{!! $week->work !!}</td></tr> 
+                    <td>{!! $week->training !!}</td> 
                 </tbody>
             </table>
             <p>Berufschule</p>

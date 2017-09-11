@@ -10,9 +10,9 @@
                 <div class="row">
                     <div class="date">
                         {{ Form::label('start_date', 'Von') }}
-                        {{ Form::date('start_date') }}
+                        {{ Form::date('start_date', null, array('class'=>'datetimepicker')) }}
                         {{ Form::label('end_date', 'Bis') }}
-                        {{ Form::date('end_date') }}
+                        {{ Form::date('end_date', null, array('class'=>'datetimepicker')) }}
                     </div>
                 </div>
                 <div class="row metadata">
@@ -46,7 +46,8 @@
                     {{ Form::textarea('school', null, array('class'=>'summernote')) }}
                 </div>
                 <div class="row">
-                    {{ Form::submit('Speichern') }}
+                    {{ Form::submit('Speichern', array('class'=>'btn btn-primary')) }}
+                    <a href="/weeks/" class="btn btn-primary">Abbrechen</a>
                 </div>
             {!! Form::close() !!}
 @endsection

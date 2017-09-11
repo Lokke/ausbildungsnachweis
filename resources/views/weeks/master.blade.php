@@ -6,16 +6,15 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
          <link rel="stylesheet" href="https://rawgit.com/lodev09/bootstrap-markdown/master/css/bootstrap-markdown.min.css">
+         <link rel="stylesheet" href="{{ asset('js/datetimepicker/css/bootstrap-datetimepicker.min.css') }}">
          <link rel="stylesheet" href="{{ asset('css/frontend.css') }}" type="text/css">
-         @yield('cssforpdf')
         <!-- Summernote text editor -->
-        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.7/summernote.css" rel="stylesheet">
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
-
-        <!-- include summernote css/js-->
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.7/summernote.css" rel="stylesheet">
         <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.7/summernote.js"></script> 
+        <script src="{{ asset('js/datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+        <script src="{{ asset('js/datetimepicker/js/locales/bootstrap-datetimepicker.de.js') }}" charset="UTF-8"></script>
     </head>
     <body>
             
@@ -44,6 +43,24 @@
             $(document).ready(function() {
                 $('.summernote').summernote();
             });
-      </script>
+        </script>
+        <script type="text/javascript">
+        $(function() {
+            $('.datetimepicker').datetimepicker({
+                language:  'de',
+                pickTime: false,
+                format: 'yyyy-mm-dd',
+                keyboardNavigation: true,
+                weekStart: 1,
+                todayBtn:  1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                minView: 2,
+                maxView: 4,
+                forceParse: 0
+            });
+        });
+        </script>
     </body>
 </html>
