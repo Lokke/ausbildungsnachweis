@@ -1,5 +1,6 @@
 html {
         background-color: #fff;
+        font-family: 'Raleway', sans-serif;
         font-weight: 300;
         height: 100vh;
         margin: 0;
@@ -7,24 +8,33 @@ html {
 
 body {
         background-color: #fff;
-        font-family: 'Times-Roman';
+        font-family: 'Raleway', sans-serif;
         height: 100vh;
         margin: 0;
         padding-top: 65px;
 }
 
-.btn.btn-primary {
+.container{
+        width: 1170px;
+}
+
+a.btn.btn-primary {
         background-color: #5a5a5a; 
         color: #fff;
         font-weight: 300;
-        margin: 20px 10px 0 0;
+        margin-top: 20px;
 }
 
 p {
+        font-family: 'Times-Roman';
 }
 
+table {
+        border: solid 2px; 
+}
 td {
         font-family: 'Times-Roman';
+        border: solid 2px; 
 }
 
 .underlined {
@@ -41,6 +51,7 @@ input {
 
 .weeklist {
         color: #4E2D3E;
+        font-family: 'Raleway', sans-serif;
         font-weight: 700;
         height: 5vh;
         margin: 0;
@@ -50,6 +61,9 @@ input {
         padding-top: 70px;
 }
 
+.datesdisplay {
+        float: right;
+}
 .full-height {
         height: 100vh;
 }
@@ -103,17 +117,4 @@ label {
 
 #start_date {
         margin-right: 25px;
-}
-
-.datepicker {
-        position: relative;
-}
-
-.metadata-row {
-        border: none;
-        margin-bottom: 20px;
-}
-
-.metadata {
-        width: 280px;
 }
