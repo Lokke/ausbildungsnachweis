@@ -3,7 +3,9 @@
 @endsection
 @section('content')
         <p>Ausbildungsnachweis für Ausbildungswoche Nr. <span class="underlined">{{ $week->week_nr }}</span></p>        
+        <br>
         <p class="datesdisplay"> von <span class="underlined"> {{ $week->start_date }}</span>   bis <span class="underlined">{{ $week->end_date }}</span></p>      
+        <br>
 
             <table class="metadata-table">
                 <tbody>
@@ -40,6 +42,26 @@
                 <tr><td>{!! $week->school !!}</td></tr> 
             </tbody>
         </table>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>    
+                        <th colspan="2">Bemerkungen</th>
+                        <th colspan="2">Bemerkungen</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Unterschrift</th>
+                        <th colspan="2">Unterschrift</th>
+                    </tr>
+					<div>
+                    <tr>
+                        <td>Datum</td>
+                        <td>Auszubildender</td>
+                        <td>Datum</td>
+                        <td>Ausbilder</td>
+                    </tr>
+					</div>
+                </tbody>
+            </table>
         
         <a href="/weeks/export/{{ $week->id }}" class="btn btn-primary">Export</a>
         <a href="/weeks/" class="btn btn-primary">Abbrechen</a>

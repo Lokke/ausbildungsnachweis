@@ -15,15 +15,15 @@
                         {{ Form::date('end_date', null, array('class'=>'datetimepicker')) }}
                     </div>
                 </div>
-                <div class="row metadata">
+                <div class="row">
                     {{ Form::label('name', 'Name') }}
                     {{ Form::text('name', 'Noa Rave') }}
                 </div>
-                <div class="row metadata">
+                <div class="row">
                     {{ Form::label('profession', 'Ausbildungsberuf') }}
                     {{ Form::text('profession', 'Fachinformatik') }}
                 </div>
-                <div class="row metadata">
+                <div class="row">
                     {{ Form::label('department', 'Ausbildende Abteilung') }}
                     {{ Form::text('department', 'Technik') }}
                 </div>

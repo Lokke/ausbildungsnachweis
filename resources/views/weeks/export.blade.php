@@ -6,46 +6,96 @@
        <style> 
               body {
                         font-family: 'Times-Roman';
-                        font-size: 12px;
-                        height: 100vh;
+                        font-size: 14px;
                         margin: 0;
               }
 
               .container {
                         width: 700px;
+                        height: 842px;
               }
 
-              table {
-              }
-            
-              td {
-                        padding: 0;
-              }
-
-              .table-element {
-                        margin-top; 30px;
-                        margin-bottom; 30px;
+              .table-bordered {
                         width: 700px;
-                        height: 200px;
+                        height: 60px;
+                        border-collapse: collapse;
+                        margin-bottom: none;
+                        vertical-align: top;
+                        text-align: left;
+              }
+
+                .table-bordered td {
                         border: solid 0.5px; 
               }
 
-              p {
-                    
+               .table-comments .top-left {
+                        height: 60px;
+                        vertical-align: top;
+                        text-align: left;
+              }
+
+              .small-table {
+                        width: 700px;
+                        height: 20px;
+                        font-size: 12px;
+              }
+
+             .small-cell {
+                        width: 170px;
+              }
+
+
+              .table-element {
+                        height: 150px;
+                        width: 700px;
+                        border: solid 0.5px; 
+              }
+             
+             html {
+                    margin-top: none;
+             }
+    
+             th {
+                    font-weight: normal;
+                    align: top;
+                    width: 50%;
+                    height: 45%;
+             }
+
+              .title {
+                    padding-top: 20px; 
+              }
+            
+              .metadata {
+                   width: 200px; 
+                   height: 30px;
+              }
+
+              .work {
+                    padding-top: none; 
               }
                .underlined {
                     text-decoration: underline;
+                    width: 200px;
                }
 
                .datesdisplay {
                     float: right;
                }
+               .datesdisplay span {
+                    margin: 0 7px 0 7px;
+              }
+                
+
+               .border-left {
+                    border-left: solid 0.5px;
+               }
          </style>
     </head>
     <body>
         <div class="container">
-            <p>Ausbildungsnachweis für Ausbildungswoche Nr. <span class="underlined">{{ $week->week_nr }}</span></p>        
-            <p class="datesdisplay"> von <span class="underlined"> {{ $week->start_date }}</span>   bis <span class="underlined">{{ $week->end_date }}</span></p>      
+            <p>Ausbildungsnachweis für Ausbildungswoche Nr. <strong>{{ $week->week_nr }}</strong></p>        
+            <p class="datesdisplay"><span> von </span> {{ $week->start_date }} <span>  bis </span> {{ $week->end_date }}</p><br>      
 
             <table class="metadata-table">
                 <tbody>
@@ -63,24 +113,41 @@
                     </tr>
                 </tbody>
             </table>
-            <h5>Tätigkeit und Stoff der Unterweisung</h5>
-            <p>Ausbildung am Arbeitsplatz</p>
+            <h4>Tätigkeit und Stoff der Unterweisung</h4>
+            <p class="work">Ausbildung am Arbeitsplatz</p>
             <table class="table table-element">
                 <tbody>
                     <tr><td>{!! $week->work !!}</td></tr> 
                 </tbody>
             </table>
-            <p>Betriebliche Schulung/Unterweisung</p>
+            <p class="title">Betriebliche Schulung/Unterweisung</p>
             <table class="table table-element">
                 <tbody>
-                    <td>{!! $week->training !!}</td> 
+                    <tr><td>{!! $week->training !!}</td></tr> 
                 </tbody>
             </table>
-            <p>Berufschule</p>
+            <p class="title">Berufschule</p>
             <table class="table table-element">
                 <tbody>
                     <tr><td>{!! $week->school !!}</td></tr> 
                 </tbody>
+            </table>
+            <br>
+            <table class="table-bordered table-comments">
+                    <tr>    
+                        <td colspan="2" class="top-left">Bemerkungen</td>
+                        <td colspan="2" class="border-left top-left"> Bemerkungen</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="top-left">Unterschrift</td>
+                        <td colspan="2" class="border-left top-left">Unterschrift</td>
+                    </tr>
+                    <tr>
+                                <td class="small-cell">Datum</td>
+                                <td class="small-cell border-left">Auszubildender</td>
+                                <td class="small-cell border-left">Datum</td>
+                                <td class="small-cell border-left">Ausbilder</td>
+                    </tr>
             </table>
         </div>
     </body>
