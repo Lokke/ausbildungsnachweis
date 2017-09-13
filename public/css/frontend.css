@@ -13,8 +13,12 @@ body {
         padding-top: 65px;
 }
 
+.main-content {
+        padding-top: 30px;
+        padding-bottom: 65px;
+}
+
 .btn.btn-primary {
-        background-color: #5a5a5a; 
         color: #fff;
         font-weight: 300;
         margin: 20px 10px 0 0;
@@ -27,6 +31,15 @@ td {
         font-family: 'Times-Roman';
 }
 
+.table-bordered {
+        height: 150px;
+}
+
+th {
+        font-weight: normal;
+        width: 50%;
+        height: 45%;
+}
 .underlined {
         text-decoration: underline;
 }
@@ -39,6 +52,9 @@ input {
 
 }
 
+h4 {
+        margin: 20px 0 20px 0;
+}
 .weeklist {
         color: #4E2D3E;
         font-weight: 700;
@@ -47,7 +63,6 @@ input {
 }
 
 .weekindex {
-        padding-top: 70px;
 }
 
 .full-height {
@@ -97,7 +112,7 @@ label {
         max-width: 100%;
         color: #4E2D3E;
         font-size: 16px;
-        font-weight: 700;
+        font-weight: 200;
         letter-spacing: .1rem;
 }
 
@@ -116,4 +131,5 @@ label {
 
 .metadata {
         width: 280px;
+        height: 30px;
 }
