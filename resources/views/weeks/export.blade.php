@@ -6,7 +6,7 @@
        <style> 
               body {
                         font-family: 'Times-Roman';
-                        font-size: 14px;
+                        font-size: 16px;
                         margin: 0;
               }
 
@@ -28,20 +28,20 @@
                         border: solid 0.5px; 
               }
 
+                .table {
+                        margin-bottom: none;
+                }
                .table-comments .top-left {
                         height: 60px;
                         vertical-align: top;
                         text-align: left;
-              }
-
-              .small-table {
-                        width: 700px;
-                        height: 20px;
                         font-size: 12px;
               }
 
+
              .small-cell {
                         width: 170px;
+                        font-size: 12px;
               }
 
 
@@ -50,6 +50,10 @@
                         width: 700px;
                         border: solid 0.5px; 
               }
+                
+              .no-margin {
+                        margin-bottom: none;
+             }
              
              html {
                     margin-top: none;
@@ -64,6 +68,7 @@
 
               .title {
                     padding-top: 20px; 
+                    margin-bottom: 3px;
               }
             
               .metadata {
@@ -73,6 +78,7 @@
 
               .work {
                     padding-top: none; 
+                    margin-bottom: 3px;
               }
                .underlined {
                     text-decoration: underline;
@@ -117,7 +123,7 @@
             <p class="work">Ausbildung am Arbeitsplatz</p>
             <table class="table table-element">
                 <tbody>
-                    <tr><td>{!! $week->work !!}</td></tr> 
+                    <tr class="no-margin"><td>{!! $week->work !!}</td></tr> 
                 </tbody>
             </table>
             <p class="title">Betriebliche Schulung/Unterweisung</p>
