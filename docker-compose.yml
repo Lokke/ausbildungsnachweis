@@ -11,18 +11,20 @@ services:
         DB_HOST: db
         DB_DATABASE: ausbildungsnachweis
         DB_USERNAME: ausbildungsnachweis
-        DB_PASSWORD: rootpass
-        DB_CONNECTION: mysql
+        DB_PASSWORD: ausbildungsnachweis
+        DB_CONNECTION: pgsql
     links: 
       - db:db
   db:
-    image: mariadb:latest
-    ports: 
-      - 3308:3306
+    image: fedora/postgresql:latest
+    ports:
+      - 32769:5432
+    volumes:
+      - ./db:/var/lib/pgsql/data/pgdata
     environment:
-        MYSQL_ROOT_PASSWORD: rootpass
-        MYSQL_DATABASE: ausbildungsnachweis
-        MYSQL_USER: ausbildungsnachweis
-        MYSQL_PASSWORD: rootpass
+      - POSTGRES_DATABASE=ausbildungsnachweis
+      - POSTGRES_USER=ausbildungsnachweis
+      - POSTGRES_PASSWORD=ausbildungsnachweis
+      - POSTGRESQL_CONTAINER_OPTS=assert_external_data = false ; clear_pgdata_pidfile = true
 
      
