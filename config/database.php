@@ -1,5 +1,5 @@
 <?php
-$dbUrl = parse_url(env("DATABASE_URL"));
+$dbUrl = parse_url(env('DATABASE_URL'));
 
 return [
 
