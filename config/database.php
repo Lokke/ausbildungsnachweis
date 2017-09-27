@@ -56,7 +56,7 @@ return [
         ],
 
         'pgsql' => [
-            'driver' => 'pgsql’,
+            'driver' => 'pgsql',
             'host' => isset($dbUrl['host']) ? $dbUrl['host'] : env('DB_HOST'),
             'port' => isset($dbUrl['port']) ? $dbUrl['port'] : env('DB_PORT'),
             'database' => isset($dbUrl['path']) ? ltrim($dbUrl['path'], '/') : env('DB_DATABASE'),
