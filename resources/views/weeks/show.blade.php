@@ -63,6 +63,10 @@
                 </tbody>
             </table>
         
-        <a href="/weeks/export/{{ $week->id }}" class="btn btn-primary">Export</a>
         <a href="/weeks/" class="btn btn-primary">Abbrechen</a>
+        <a href="/weeks/{{ $week->id }}/edit" class="btn btn-primary">Bearbeiten</a>
+            {!! Form::model($week, ['method' => 'DELETE', 'action' => ['WeeksController@destroy',$week->id]]) !!}
+            <a href="/weeks" class="btn btn-primary">Löschen</a>
+        {!! Form::close() !!}
+        <a href="/weeks/export/{{ $week->id }}" class="btn btn-primary">Export</a>
 @endsection

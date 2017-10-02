@@ -1,6 +1,6 @@
 @extends('weeks.master')
 @section('content')
-            {!! Form::open(['method' => 'POST', 'route' => ['weeks.store', $week->id ]], 'class'=>'form') !!}
+            {!! Form::model($week, ['method' => 'POST', 'action' => ['WeeksController@update',$week->id]]) !!}
                  <div class="row">
                     {{ Form::label('week_nr', 'Ausbildungsnachweis für Ausbildungswoche Nr. ') }}
                     {{ Form::number('week_nr') }}

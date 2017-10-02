@@ -19,17 +19,18 @@ class WeeksController extends Controller
         return view('weeks.show', ['week' => Week::find($id)]); 
     }
 
-    public function postForm(Request $request)
+    public function store(Request $request)
     {
         $week_id = $request->input('id');
         $week = Week::firstOrNew(['id' => $week_id]); 
         $week_data = $request->only('week_nr', 'name', 'profession', 'department', 'school', 'work', 'training', 'start_date', 'end_date');
         $week->fill($week_data);
         $week->save();
+
         return redirect('/weeks');
     }
     
-    public function showForm(Request $request)
+    public function create(Request $request)
     {
         return view(
              'weeks.form', [
@@ -40,6 +41,29 @@ class WeeksController extends Controller
         );
     }       
     
+    public function edit($id)
+    {
+        return view('weeks.edit', ['week' => Week::find($id)]); 
+    }     
+
+    public function update(Request $request, $id)
+    {
+        $week = Week::findOrFail($id);
+        $week->update($request->all());
+
+        return redirect()->action('WeeksController@show', [$id]);
+    }
+
+
+    public function destroy($id)
+    {
+        $week = Week::findOrFail($id);
+        $week->delete();
+
+        return redirect('/weeks');
+
+    }
+
     public function exportTemplate($id)
     {
         return view('weeks.export', ['week' => Week::find($id)]); 
