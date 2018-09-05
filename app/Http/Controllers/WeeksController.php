@@ -54,7 +54,6 @@ class WeeksController extends Controller
         return redirect()->action('WeeksController@show', [$id]);
     }
 
-
     public function destroy($id)
     {
         $week = Week::findOrFail($id);
